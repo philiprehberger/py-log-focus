@@ -113,21 +113,30 @@ class FocusHandler(logging.Handler):
         super().close()
 
 
-def focus(level: str | int = "WARNING") -> None:
-    """Configure the root logger with a FocusHandler.
+def focus(
+    name: str | None = None,
+    *,
+    level: str | int = "WARNING",
+) -> logging.Logger:
+    """Configure a logger with a FocusHandler and return it.
 
     Convenience function for quick setup.
 
     Args:
+        name: Logger name. ``None`` for the root logger.
         level: Minimum log level as string or int constant.
+
+    Returns:
+        The configured :class:`logging.Logger`.
     """
     if isinstance(level, str):
         level = getattr(logging, level.upper(), logging.WARNING)
 
-    root = logging.getLogger()
-    root.setLevel(level)
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
 
-    for handler in root.handlers[:]:
-        root.removeHandler(handler)
+    for handler in logger.handlers[:]:
+        logger.removeHandler(handler)
 
-    root.addHandler(FocusHandler(level=level))
+    logger.addHandler(FocusHandler(level=level))
+    return logger

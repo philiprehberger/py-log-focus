@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "philiprehberger-log-focus"
-version = "0.1.1"
+version = "0.1.2"
 description = "Structured log filtering and highlighting for terminals"
 readme = "README.md"
 license = "MIT"
