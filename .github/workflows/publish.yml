@@ -11,6 +11,8 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install build twine
+      - run: pip install -e . pytest
+      - run: pytest tests/ -v
       - run: python -m build
       - run: twine upload dist/*
         env:
