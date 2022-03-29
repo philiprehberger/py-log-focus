@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.5
+
+- Add Development section to README
+
 ## 0.1.2
 
 - Fix focus() to accept logger name and return Logger instance
