@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.7
+
+- Fix color mapping documentation to match source code
+- Convert API section to table format
+- Document Colors class in API table
+
 ## 0.1.5
 
 - Add Development section to README
