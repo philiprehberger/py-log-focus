@@ -3,6 +3,7 @@
 [![Tests](https://github.com/philiprehberger/py-log-focus/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/py-log-focus/actions/workflows/publish.yml)
 [![PyPI version](https://img.shields.io/pypi/v/philiprehberger-log-focus.svg)](https://pypi.org/project/philiprehberger-log-focus/)
 [![License](https://img.shields.io/github/license/philiprehberger/py-log-focus)](LICENSE)
+[![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
 
 Structured log filtering and highlighting for terminals.
 
