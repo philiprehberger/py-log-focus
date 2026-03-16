@@ -1,5 +1,9 @@
 # philiprehberger-log-focus
 
+[![Tests](https://github.com/philiprehberger/py-log-focus/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/py-log-focus/actions/workflows/publish.yml)
+[![PyPI version](https://img.shields.io/pypi/v/philiprehberger-log-focus.svg)](https://pypi.org/project/philiprehberger-log-focus/)
+[![License](https://img.shields.io/github/license/philiprehberger/py-log-focus)](LICENSE)
+
 Structured log filtering and highlighting for terminals.
 
 ## Installation
