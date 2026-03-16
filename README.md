@@ -59,6 +59,14 @@ logger.info("Query completed", extra={"duration_ms": 250})
 - `focus(name, level=DEBUG, repeat_threshold=10, slow_threshold_ms=100)` — Quick setup, returns a configured logger
 - `FocusHandler(repeat_threshold, slow_threshold_ms)` — Custom logging handler
 
+
+## Development
+
+```bash
+pip install -e .
+python -m pytest tests/ -v
+```
+
 ## License
 
 MIT
