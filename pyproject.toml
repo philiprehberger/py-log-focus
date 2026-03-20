@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "philiprehberger-log-focus"
-version = "0.1.5"
+version = "0.1.6"
 description = "Structured log filtering and highlighting for terminals"
 readme = "README.md"
 license = "MIT"
@@ -31,3 +31,9 @@ Changelog = "https://github.com/philiprehberger/py-log-focus/blob/main/CHANGELOG
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/philiprehberger_log_focus"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.mypy]
+strict = true
