@@ -50,14 +50,17 @@ logger.info("Query completed", extra={"duration_ms": 250})
 
 ### Features
 
-- Color-coded output by log level (DEBUG=cyan, INFO=green, WARNING=yellow, ERROR=red, CRITICAL=magenta)
+- Color-coded output by log level (DEBUG=gray, INFO=default, WARNING=yellow, ERROR=red, CRITICAL=bold red)
 - Repeat suppression — collapses repeated identical messages
 - Slow operation highlighting via `extra["duration_ms"]`
 
 ## API
 
-- `focus(name, level=DEBUG, repeat_threshold=10, slow_threshold_ms=100)` — Quick setup, returns a configured logger
-- `FocusHandler(repeat_threshold, slow_threshold_ms)` — Custom logging handler
+| Function / Class | Description |
+|------------------|-------------|
+| `focus(name, level="WARNING")` | Quick setup, returns a configured logger |
+| `FocusHandler(level, repeat_threshold, slow_key, slow_threshold_ms, stream)` | Custom logging handler with color and repeat suppression |
+| `Colors` | ANSI escape constants — `RESET`, `BOLD`, `DIM`, `RED`, `YELLOW`, `GRAY` |
 
 
 ## Development
