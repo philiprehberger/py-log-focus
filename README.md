@@ -2,8 +2,7 @@
 
 [![Tests](https://github.com/philiprehberger/py-log-focus/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/py-log-focus/actions/workflows/publish.yml)
 [![PyPI version](https://img.shields.io/pypi/v/philiprehberger-log-focus.svg)](https://pypi.org/project/philiprehberger-log-focus/)
-[![License](https://img.shields.io/github/license/philiprehberger/py-log-focus)](LICENSE)
-[![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
+[![Last updated](https://img.shields.io/github/last-commit/philiprehberger/py-log-focus)](https://github.com/philiprehberger/py-log-focus/commits/main)
 
 Structured log filtering and highlighting for terminals.
 
@@ -63,7 +62,6 @@ logger.info("Query completed", extra={"duration_ms": 250})
 | `FocusHandler(level, repeat_threshold, slow_key, slow_threshold_ms, stream)` | Custom logging handler with color and repeat suppression |
 | `Colors` | ANSI escape constants — `RESET`, `BOLD`, `DIM`, `RED`, `YELLOW`, `GRAY` |
 
-
 ## Development
 
 ```bash
@@ -71,6 +69,24 @@ pip install -e .
 python -m pytest tests/ -v
 ```
 
+## Support
+
+If you find this project useful:
+
+⭐ [Star the repo](https://github.com/philiprehberger/py-log-focus)
+
+🐛 [Report issues](https://github.com/philiprehberger/py-log-focus/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+
+💡 [Suggest features](https://github.com/philiprehberger/py-log-focus/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
+
+❤️ [Sponsor development](https://github.com/sponsors/philiprehberger)
+
+🌐 [All Open Source Projects](https://philiprehberger.com/open-source-packages)
+
+💻 [GitHub Profile](https://github.com/philiprehberger)
+
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/philiprehberger)
+
 ## License
 
-MIT
+[MIT](LICENSE)
