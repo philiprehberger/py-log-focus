@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0 (2026-05-30)
+
+- Add `unfocus()` to remove FocusHandlers from a logger
+- Add `Colors.GREEN` and `Colors.CYAN` constants
+
 ## 0.1.9 (2026-03-31)
 
 - Standardize README to 3-badge format with emoji Support section

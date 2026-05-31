@@ -1,5 +1,5 @@
 import logging
-from philiprehberger_log_focus import FocusHandler, focus
+from philiprehberger_log_focus import Colors, FocusHandler, focus, unfocus
 
 
 def test_focus_returns_logger():
@@ -47,3 +47,29 @@ def test_repeat_suppression(capsys):
 def test_focus_sets_level():
     logger = focus("test_level", level=logging.WARNING)
     assert logger.level == logging.WARNING
+
+
+def test_colors_green_and_cyan_exist():
+    assert Colors.GREEN.startswith("\x1b[") or Colors.GREEN.startswith("\033[")
+    assert Colors.CYAN.startswith("\x1b[") or Colors.CYAN.startswith("\033[")
+
+
+def test_unfocus_removes_focus_handlers():
+    logger = focus("test-logger-1")
+    assert any(isinstance(h, FocusHandler) for h in logger.handlers)
+
+    unfocus("test-logger-1")
+    logger_after = logging.getLogger("test-logger-1")
+    assert not any(isinstance(h, FocusHandler) for h in logger_after.handlers)
+
+
+def test_unfocus_no_focus_handlers_is_noop():
+    logger = logging.getLogger("test-logger-noop")
+    logger.handlers.clear()
+    # Should not raise
+    unfocus("test-logger-noop")
+
+
+def test_unfocus_returns_logger():
+    result = unfocus("test-logger-2")
+    assert result is logging.getLogger("test-logger-2")

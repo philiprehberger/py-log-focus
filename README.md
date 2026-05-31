@@ -48,6 +48,16 @@ logger.info("Query completed", extra={"duration_ms": 250})
 # Automatically highlighted if above slow_threshold_ms
 ```
 
+### Removing the handler
+
+```python
+from philiprehberger_log_focus import unfocus
+
+unfocus("my-logger")
+# All FocusHandler instances are detached from the named logger.
+# The logger's level is left unchanged.
+```
+
 ### Features
 
 - Color-coded output by log level (DEBUG=gray, INFO=default, WARNING=yellow, ERROR=red, CRITICAL=bold red)
@@ -59,8 +69,9 @@ logger.info("Query completed", extra={"duration_ms": 250})
 | Function / Class | Description |
 |------------------|-------------|
 | `focus(name, level="WARNING")` | Quick setup, returns a configured logger |
+| `unfocus(name=None)` | Remove all `FocusHandler` instances from the named logger and return it |
 | `FocusHandler(level, repeat_threshold, slow_key, slow_threshold_ms, stream)` | Custom logging handler with color and repeat suppression |
-| `Colors` | ANSI escape constants — `RESET`, `BOLD`, `DIM`, `RED`, `YELLOW`, `GRAY` |
+| `Colors` | ANSI escape constants — `RESET`, `BOLD`, `DIM`, `RED`, `GREEN`, `YELLOW`, `CYAN`, `GRAY` |
 
 ## Development
 

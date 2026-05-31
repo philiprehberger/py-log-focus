@@ -11,6 +11,7 @@ __all__ = [
     "FocusHandler",
     "Colors",
     "focus",
+    "unfocus",
 ]
 
 
@@ -21,7 +22,9 @@ class Colors:
     BOLD: ClassVar[str] = "\033[1m"
     DIM: ClassVar[str] = "\033[2m"
     RED: ClassVar[str] = "\033[31m"
+    GREEN: ClassVar[str] = "\033[32m"
     YELLOW: ClassVar[str] = "\033[33m"
+    CYAN: ClassVar[str] = "\033[36m"
     GRAY: ClassVar[str] = "\033[90m"
 
 
@@ -139,4 +142,17 @@ def focus(
         logger.removeHandler(handler)
 
     logger.addHandler(FocusHandler(level=level))
+    return logger
+
+
+def unfocus(name: str | None = None) -> logging.Logger:
+    """Remove all FocusHandler instances from the named logger and return it.
+
+    The logger's level is left unchanged.
+    """
+    logger = logging.getLogger(name)
+    for handler in logger.handlers[:]:
+        if isinstance(handler, FocusHandler):
+            logger.removeHandler(handler)
+            handler.close()
     return logger
